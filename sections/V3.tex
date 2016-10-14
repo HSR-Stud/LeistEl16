@@ -9,10 +9,10 @@
 \end{itemize}
 
 \subsubsection{nach Führung}
-
 \href{https://de.wikipedia.org/wiki/Kommutierung}{Kommuntierung WIKI}\newline
-Bzw nach der Herlkunft der Kommutierungssoannung.\newline
-Kommutierung bedeutet die Wechslung des Stromflusses con einem HL-Ventil auf ein anderes.
+\begin{minipage}{0.6\linewidth}
+Bzw nach der Herlkunft der Kommutierungsspannung.\newline
+Kommutierung bedeutet die Wechslung des Stromflusses von einem HL-Ventil auf ein anderes.
 \begin{itemize}
     \item Netzgeführte Schaltung
         \subitem Kommutierungsspannung vom Netzwerk
@@ -21,20 +21,32 @@ Kommutierung bedeutet die Wechslung des Stromflusses con einem HL-Ventil auf ein
     \item Selbstgeführte Schalung
         \subitem Kommutierungsspannung wird selbst erzeugt
 \end{itemize}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+    \includegraphics[width=\linewidth]{images/StromrichterKennzeichnung}\newline
+\end{minipage}
 
 \subsection{Kennzeichnung}
 \includegraphics[width=0.8\linewidth]{images/SRKennzeichnung}\newline
 \href{https://de.wikipedia.org/wiki/Gleichrichter}{Gleichrichter WIKI}
 
-\subsection{Ungesteierter Gleichrichter (M1U)}
-\includegraphics[width=0.4\linewidth]{images/UGRM1U}
-Die Diode wird als Ideal betrachtet \rightarrow keine Schwellenspannung oder Innenwiderstand
+%===================================================================
+\clearpage
+\subsection{Ungesteuerter Gleichrichter}
+\subsubsection{M1U}
+\includegraphics[width=0.4\linewidth]{images/PrakUGM1}
+\includegraphics[width=0.3\linewidth]{images/PrakUGM1Kl1}
+\includegraphics[width=0.3\linewidth]{images/PrakUGM1Kl2}\newline
+%\includegraphics[width=0.4\linewidth]{images/UGRM1U}
+%\includegraphics[width=0.2\linewidth]{images/UGRM1US} \newline
+Die Diode wird als Ideal betrachtet $ \rightarrow $ keine Schwellenspannung oder Innenwiderstand
 
-\begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |} %TODO Formeln einfügen
+\begin{longtable}{| p{.33\textwidth} | p{.40\textwidth} | p{.25\textwidth} |} %TODO Formeln einfügen
     \hline
     \textbf{Grundgleichungen}&
     \[ U_2 = U_D + U_R \]
-    \[ U_R = I_2 \cdot R \]&\\
+    \[ U_R = I_2 \cdot R\]
+    \[ \bar{U}_{OUT} = \dfrac{\hat{U}}{\pi}\]&\\
     \hline
     \textbf{Durchlassrichtung}\newline
     $ 0 < \omega t < \pi $&
@@ -45,30 +57,46 @@ Die Diode wird als Ideal betrachtet \rightarrow keine Schwellenspannung oder Inn
     \[ U_2=U_D \qquad U_R = 0 \]&\\
     \hline
     
-    &
-    &
+    \textbf{Wirkleistung der Last R}&
+    \[ P=\frac{1}{2\pi} \int_{0}^{2\pi} p(\alpha) d\alpha = \dfrac{U_{R\;RMS}^2}{R} \]&
     \\ \hline
     
     \textbf{Scheinleistung}&
     \[ S_2 = U_2 \cdot I_2 = U_2 \cdot I_{R RMS} \]&
     \\ \hline
         
-    \textbf{Grundschwingugngsblindleistujng}&
+    \textbf{Grundschwingugngsblindleistung}&
     \[ Q_2\cdot I_{2 1} \cdot sin(\varphi_{2 1}) = 0 \]&
     \\ \hline    
     
         
-    \textbf{Verzerrungsleistubg}&
+    \textbf{Verzerrungsleistung}&
     \[ Q_v = U_2 \cdot \sqrt{\sum_{k=2}^{\infty} {I_2^2}_k} = \sqrt{S_2^2 - P_2^2} \]&
     \\ \hline
 
 \end{longtable}
+
 %
 %Leistung = Momentanleistung des Sormes x momentanleistung der Spannung\\
 %Leistung = Leistung bei trafoseite messen 1harm des stroms phasenverschiebung -> u i cos(phi) fourierreihen..
 %Leistung = Irav* U1harm  
+%TODO Grafik Oberwellen
+\textbf{Oberwellen}\newline
+\vspace{-1cm}
+\begin{multicols}{3}
+    \textbf{ \qquad R}\newline   
+    \includegraphics[width=\linewidth]{images/M1UR}   
+    \textbf{\null \qquad R + L}\newline
+    \includegraphics[width=\linewidth]{images/M1URL}
+    \textbf{ \qquad R + L+ freilaufDiode}\newline
+    \includegraphics[width=\linewidth]{images/M1URLD}
+\end{multicols}
+%===================================================================
+\clearpage
 
-\subsection{Ungesteuerter Gleichrichter (B2U)}
-
+\subsubsection{B2U}
+\includegraphics[width=0.4\linewidth]{images/PrakUGB2}
+\includegraphics[width=0.3\linewidth]{images/PrakUGB2Kl1}
+\includegraphics[width=0.3\linewidth]{images/PrakUGB2Kl2}\newline
 
 \clearpage
