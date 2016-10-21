@@ -1,94 +1,154 @@
 \renewcommand{\arraystretch}{.5}
 \section{Grundformeln}
-
-\begin{longtable}{| p{.35\textwidth} | p{.40\textwidth} |}
-    \hline
-    Berechnung des Mittelwertes
-    &\ $X_{AV} = \frac{1}{T}\int\limits_{0}^{T}x(t)dt$\\
-    \hline
-    Berechnung des Gleichwertes
-    &\ $\overline{|X|} = \frac{1}{T} \int\limits_{0}^{T} |x(t)|dt$\\
-    \hline
-    Berechnung des Effektivwertes
-    &\ $X_{RMS} = \sqrt{\frac{1}{T}\int\limits_{0}^{T}x^2(t)dt}$\\
-    \hline
-    Effektivwert Oberwellen
-    & $X_{RMS\_Oberwellen} = \sqrt{X_{RMS}^2 - X_{AV}^2}$\\
-    \hline
-    Formfaktor
-    & $F = \frac{X_{RMS}}{\overline{|X|}}$\\
-    \hline
-    Welligkeit
-    & $w = \frac{X_{RMS\_Oberwellen}}{|X_{AV}|}= \frac{\sqrt{\sum\limits_{k = 1}^{\infty}X_{k}^2}}{|X_{AV}|} = \sqrt{F^2-1}$\\
-    \hline
-    Leistungsfaktor&
-    $ \lambda = \frac{P}{S} $
-    \\ \hline 
-\end{longtable}
-
-\begin{longtable}{| p{.15\textwidth} | p{.15\textwidth} | p{.15\textwidth}|}%LAYOUT
-    \hline
-    &
-    \textbf{Formfaktor}&
-    \textbf{Crestfaktor}\\ \hline
-    
-    \tabbild[width=2cm]{images/GFSinus}&
-    \[ F=\dfrac{X_{RMS}}{|\overline{X}|} \]&
-    \[ C=\dfrac{\hat{X}}{X_{RMS}} \]\\ \hline
-    
-    \tabbild[width=2cm]{images/GFSinusSinus}&
-    \[ \sqrt{2} \]&
-    \[ \dfrac{\pi}{2 \sqrt{2}} = 1.11 \]\\ \hline
-    
-    \tabbild[width=2cm]{images/GFSinusGR}&
-    \[ 2 \]&
-    \[ \dfrac{\pi}{2} \]\\ \hline
-
-    \tabbild[width=2cm]{images/GFRechteck}&
-    \[ \sqrt{\dfrac{T}{\tau}} \]&
-    \[ \sqrt{\dfrac{T}{\tau}} \]\\ \hline
-    
-    \tabbild[width=2cm]{images/GFDreieck}&
-    \[ \sqrt{3} \]&
-    \[ \dfrac{2}{\sqrt{3}}=1.15 \]\\ \hline
-    
-\end{longtable}
-
+%\begin{longtable}{| m{.15\textwidth} | m{.15\textwidth} | m{.15\textwidth}|}%LAYOUT
+%    \hline
+%    &
+%    \textbf{Formfaktor}&
+%    \textbf{Crestfaktor}\\ \hline
+%    
+%    \tabbild[width=2cm]{images/GFSinus}&
+%    \[ F=\dfrac{X_{RMS}}{|\overline{X}|} \]&
+%    \[ C=\dfrac{\hat{X}}{X_{RMS}} \]\\ \hline
+%    
+%    \tabbild[width=2cm]{images/GFSinusSinus}&
+%    \[ \sqrt{2} \]&
+%    \[ \dfrac{\pi}{2 \sqrt{2}} = 1.11 \]\\ \hline
+%    
+%    \tabbild[width=2cm]{images/GFSinusGR}&
+%    \[ 2 \]&
+%    \[ \dfrac{\pi}{2} \]\\ \hline
+%
+%    \tabbild[width=2cm]{images/GFRechteck}&
+%    \[ \sqrt{\dfrac{T}{\tau}} \]&
+%    \[ \sqrt{\dfrac{T}{\tau}} \]\\ \hline
+%    
+%    \tabbild[width=2cm]{images/GFDreieck}&
+%    \[ \sqrt{3} \]&
+%    \[ \dfrac{2}{\sqrt{3}}=1.15 \]\\ \hline
+%    
+%\end{longtable}
 \subsection{Leistungen}
 \includegraphics[width=0.4\linewidth]{images/LeistungsDreieck}
 \begin{longtable}{| p{.3\textwidth} | p{.40\textwidth} |p{.25\textwidth}|}
     \hline
     
     \textbf{{\color{blue}Scheinleistung}}&
-    \[ S=U\cdot I =  \sqrt{P^2+Q^2} = \sqrt{P^2+Q_1^2+Q_d^2} \]&
+    \vspace{-0.5cm}\[ S=U\cdot I =  \sqrt{P^2+Q^2} = \sqrt{P^2+Q_1^2+Q_d^2} \]\vspace{-0.5cm}&
     \\ \hline
     
     \textbf{Wirkleistung}&
-    \[ P=U\cdot I \cdot cos\varphi_1 \]&
+    \vspace{-0.5cm}\[ P=U\cdot I \cdot cos\varphi_1 \]\vspace{-0.5cm}&
     \\ \hline 
        
     \textbf{\color{yellow}Blindleistung}&
-    \[ Q=U\cdot I \cdot sin\varphi_1 \]
+    \vspace{-0.5cm}\[ Q=U\cdot I \cdot sin\varphi_1 \]
     \[ Q_1 = S_1 \cdot sin \varphi_1 \]
-    \[ Q_d = U\sqrt{\sum_{m=2}^{\infty}I_m^2=\sqrt{Q^2-Q_1^2}} \]&
+    \[ Q_d = U\sqrt{\sum_{m=2}^{\infty}I_m^2}=\sqrt{Q^2-Q_1^2} \]\vspace{-0.2cm}&
     $ Q_1 $= Grundschwingungs- \newline \quad Blindleistung\newline
     $ Q_d $= Verzerrungsleistung\newline
     \\ \hline
       
     \textbf{\color{green}Grundschwingungs-\newline scheinleistung}&
-    \[ S_1=U_1\cdot I_1 = \sqrt{P^2+Q_1^2} \]&
+    \vspace{-0.5cm}\[ S_1=U_1\cdot I_1 = \sqrt{P^2+Q_1^2} \]\vspace{-0.5cm}&
     $ S_1 $= Grundschwingungs-Scheinleistung
     \\ \hline    
-    
-    &
-    &
-    \\ \hline    
-    
-    &
-    &
-    \\ \hline   
-     
+    \hline
+    Berechnung des Mittelwertes&
+    $X_{AV} = \frac{1}{T}\int\limits_{0}^{T}x(t)dt$
+    &\\
+    \hline
+    Berechnung des Gleichwertes
+    & $\overline{|X|} = \frac{1}{T} \int\limits_{0}^{T} |x(t)|dt$
+    &\\
+    \hline
+    Berechnung des Effektivwertes
+    & $X_{RMS} = \sqrt{\frac{1}{T}\int\limits_{0}^{T}x^2(t)dt}$
+    &\\
+    \hline
+    Effektivwert Oberwellen
+    & $X_{RMS\_Oberwellen} = \sqrt{X_{RMS}^2 - X_{AV}^2}$
+    &\\
+    \hline
+    Formfaktor
+    & $F = \frac{X_{RMS}}{\overline{|X|}}$
+    &\\
+    \hline
+    Welligkeit
+    & $w = \frac{X_{RMS\_Oberwellen}}{|X_{AV}|}= \frac{\sqrt{\sum\limits_{k = 1}^{\infty}X_{k}^2}}{|X_{AV}|} = \sqrt{F^2-1}$
+    &\\
+    \hline
+    Leistungsfaktor&
+    $ \lambda = \frac{P}{S} $
+    &\\ \hline 
 \end{longtable}
+%========================================================
+\clearpage
 
-%TODO Fourier
+\subsection{Fourier}%TODO Fourier
+\subsubsection{Allgemeine Form}
+Eine periodische Funktion lässt sich durch eine Reihe von Sinus- und Kosinusfunktionen darstellen.
+$$f(t) = \frac{a_{0}}{2}+\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{k} \cdot sin(k \omega t)) = f_{AV} + \sum_{k = 1}^{\infty} c_k \cdot \sin(k\omega t + \varphi_k)$$
+
+\begin{minipage}{0.5\linewidth}
+    Die Koeffizienten der Entwicklung von $f(t)$ sind: \vfill
+    \begin{tabular}{|ll|}
+        \hline
+        $a_{0} = \frac{2}{T}\int\limits_{0}^{T}f(t)dt$ & \\
+        \hline
+        $a_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot cos(k \omega t)dt$   &\ $(k = 0,1,2,...)$\\
+        \hline
+        $b_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot sin(k \omega t)dt$   &\ $(k = 1,2,3,...)$\\
+        \hline
+        $c_{k} = \sqrt{a_k^2 + b_k^2},\quad \varphi_k = \arctan(\frac{b_k}{a_k})$ &\\
+        \hline
+    \end{tabular}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \subsubsection{Orthogonalitätsbeziehungen}
+    $\int\limits_0^T \cos(n\omega t)\cdot \cos(m\omega t)dt=
+    \begin{cases}
+    T,\ n=m=0\\
+    \frac{T}{2},\ n=m>0\\ 
+    0,\ n\neq m\\
+    \end{cases}$\\
+    
+    
+    $\int\limits_0^T \sin(n\omega t)\cdot \sin(m\omega t)dt=
+    \begin{cases}
+    \frac{T}{2},\ n=m\\
+    0,\ n\neq m\\
+    \end{cases}$\\
+    $\int\limits_0^T \cos(n\omega t)\cdot \sin(m\omega t)dt=
+    \begin{cases}
+    0,\ \text{\footnotesize n-m=gerade Zahl}\\
+    \dfrac{2m}{m^2-n^2},\ \text{{\footnotesize n-m=ungeade Zahl}}\\
+    \end{cases}$
+\end{minipage}
+
+\begin{minipage}{0.5\linewidth}
+\subsubsection{Komplexe Darstellung der Fourierreihen}
+$$f(t) = \sum\limits_{k = -\infty}^{\infty} c_k \cdot e^{j k \omega t}$$ 
+$$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$$
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\subsubsection{Umrechnungsformeln}
+    $$c_n=\overline{c_{-n}}=\frac{a_n-jb_n}{2} (n=0,1,2,3,\ldots\text{ wobei }b_0=0)$$
+    $$
+    \left.
+    \begin{array}{l} 
+    a_n=2 \cdot \text{Re}(c_n)\\
+    b_n=-2 \cdot \text{Im}(c_n)
+    \end{array}
+    \right\} 
+    \quad
+    (n=0,1,2,3,\ldots, b_0 = 0)$$
+\end{minipage}
+
+\subsubsection{Sätze zur Berechnung der Fourierkoeffizienten}
+\textbf{Symmetrie}\newline
+\begin{tabular}{ll}
+    Falls $f(t)$ gerade ist $(f(t) = f(-t))$: &\ $\rightarrow b_{n} = 0, a_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot cos(n \omega t)dt$\\
+    Falls $f(t)$ ungerade ist $(f(-t) = -f(t))$: &\ $\rightarrow a_{n} = 0, b_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot sin(n \omega t)dt$\\
+\end{tabular}\\\\
+Beispiele von geraden Funktionen sind $x^2, cos(x)$ und Beispiele ungerader Funktionen sind $x, x^3, sin(x)$.
 \clearpage
