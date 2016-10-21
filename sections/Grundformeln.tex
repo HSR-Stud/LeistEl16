@@ -41,9 +41,9 @@
     \\ \hline 
        
     \textbf{\color{yellow}Blindleistung}&
-    \vspace{-0.5cm}\[ Q=U\cdot I \cdot sin\varphi_1 \]
+    \vspace{-0.5cm}\[ Q=U\cdot I \cdot sin\varphi_1 = \sqrt{Q_1^2+Q_d^2} \]
     \[ Q_1 = S_1 \cdot sin \varphi_1 \]
-    \[ Q_d = U\sqrt{\sum_{m=2}^{\infty}I_m^2}=\sqrt{Q^2-Q_1^2} \]\vspace{-0.2cm}&
+    \[ Q_d = U\cdot \sqrt{\sum_{m=2}^{\infty}I_m^2}\]\vspace{-0.2cm}&
     $ Q_1 $= Grundschwingungs- \newline \quad Blindleistung\newline
     $ Q_d $= Verzerrungsleistung\newline
     \\ \hline
@@ -78,7 +78,7 @@
     &\\
     \hline
     Leistungsfaktor&
-    $ \lambda = \frac{P}{S} $
+    $ \lambda = \frac{P}{S} = \dfrac{I_1}{I}cos\varphi_1 $
     &\\ \hline 
 \end{longtable}
 %========================================================
@@ -87,7 +87,7 @@
 \subsection{Fourier}%TODO Fourier
 \subsubsection{Allgemeine Form}
 Eine periodische Funktion lässt sich durch eine Reihe von Sinus- und Kosinusfunktionen darstellen.
-$$f(t) = \frac{a_{0}}{2}+\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{k} \cdot sin(k \omega t)) = f_{AV} + \sum_{k = 1}^{\infty} c_k \cdot \sin(k\omega t + \varphi_k)$$
+$$f(t) = \underbrace{\frac{a_{0}}{2}}_{Gleichanteil}+\underbrace{\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{k} \cdot sin(k \omega t))}_{Wechselanteil} = f_{AV}+ \sum_{k = 1}^{\infty} \underbrace{c_k}_{\makebox[0pt]{\text{\scriptsize Amplitue der Harmonischen}}} \cdot \sin(k\omega t + \varphi_k)$$
 
 \begin{minipage}{0.5\linewidth}
     Die Koeffizienten der Entwicklung von $f(t)$ sind: \vfill
@@ -95,11 +95,15 @@ $$f(t) = \frac{a_{0}}{2}+\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{
         \hline
         $a_{0} = \frac{2}{T}\int\limits_{0}^{T}f(t)dt$ & \\
         \hline
-        $a_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot cos(k \omega t)dt$   &\ $(k = 0,1,2,...)$\\
+        $a_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot cos(k \omega t)dt$   &
+         $(k = 0,1,2,...)$\\
         \hline
-        $b_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot sin(k \omega t)dt$   &\ $(k = 1,2,3,...)$\\
+        $b_{k} = \frac{2}{T}\int\limits_{0}^{T}f(t) \cdot sin(k \omega t)dt$   &
+         $(k = 1,2,3,...)$\\
         \hline
-        $c_{k} = \sqrt{a_k^2 + b_k^2},\quad \varphi_k = \arctan(\frac{b_k}{a_k})$ &\\
+        $c_{k} = \sqrt{a_k^2 + b_k^2}$ &\\
+        \hline
+        $\varphi_k = \arctan(\frac{b_k}{a_k}) $&\\
         \hline
     \end{tabular}
 \end{minipage}
@@ -145,10 +149,22 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
 \end{minipage}
 
 \subsubsection{Sätze zur Berechnung der Fourierkoeffizienten}
-\textbf{Symmetrie}\newline
-\begin{tabular}{ll}
-    Falls $f(t)$ gerade ist $(f(t) = f(-t))$: &\ $\rightarrow b_{n} = 0, a_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot cos(n \omega t)dt$\\
-    Falls $f(t)$ ungerade ist $(f(-t) = -f(t))$: &\ $\rightarrow a_{n} = 0, b_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot sin(n \omega t)dt$\\
-\end{tabular}\\\\
-Beispiele von geraden Funktionen sind $x^2, cos(x)$ und Beispiele ungerader Funktionen sind $x, x^3, sin(x)$.
+\textbf{Symmetrie} %STEFAN TIKIZ PIC BSP
+\begin{multicols}{2}
+    \begin{minipage}{\linewidth}
+        \textbf{Gerade}\newline 
+        $f(t) = f(-t)$\newline
+        Symetrisch an Y-Achse
+        \[ b_{n} = 0, a_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot cos(n \omega t) \diff t \]
+        Bsp: $ x^2, cos(x) $
+    \end{minipage}
+                
+    \begin{minipage}{\linewidth}
+        \textbf{Ungerade}\newline
+        $f(-t) = -f(t)$ \newline
+        Punktsymetrisch am Ursprung
+        \[  a_{n} = 0, b_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot sin(n \omega t)\diff t \]
+        Bsp: $ x, x^3, sin(x) $
+\end{minipage}
+\end{multicols}
 \clearpage
