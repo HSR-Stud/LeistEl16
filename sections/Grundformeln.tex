@@ -149,24 +149,26 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
 \end{minipage}
 
 \subsubsection{Sätze zur Berechnung der Fourierkoeffizienten}
-\textbf{Symmetrie} %XY_Achse highliting
+\textbf{Symmetrie}
 \begin{multicols}{2}
     \begin{minipage}{\linewidth}
         \textbf{Gerade}\newline 
         $f(t) = f(-t)$\newline
         Symetrisch an Y-Achse
         \[ b_{n} = 0, a_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot cos(n \omega t) \diff t \]
+        \begin{centering} 
         \begin{tikzpicture}[scale = 0.7]
             \draw [help lines] (-pi,-1.5) grid (pi,pi);  %Gitter
-            \draw [thick, ->](-pi,0) -- (pi,0);         %x-achse
+            \draw [thick, ->](-pi,0) -- (pi,0);          %x-achse
             \draw [thick, ->](0,-1.5) -- (0,pi);         %y-achse
             \draw [blue, domain=-1.77:1.77] plot (\x, {pow(\x, 2)});
-            \node [left] at (1.5,2) {$ X^2$};
+            \node [left] at (1.7,2.8) {$ X^2$};
             \draw [blue, domain=-pi:pi] plot (\x, {cos(\x r)});
             \node [left] at (pi,-1) {cos(x)};
             \draw [blue, domain=-pi:pi] plot (\x, {abs(\x});
             \node [left] at (2.9,2.9) {|x|};
         \end{tikzpicture}
+    \end{centering}
     \end{minipage}
                 
     \begin{minipage}{\linewidth}
@@ -174,17 +176,19 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
         $f(-t) = -f(t)$ \newline
         Punktsymetrisch am Ursprung
         \[  a_{n} = 0, b_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot sin(n \omega t)\diff t \]
+        \begin{centering} 
         \begin{tikzpicture}[scale = 0.7]
             \draw [help lines] (-pi,-1.5) grid (pi,pi);  %Gitter
             \draw [thick, ->](-pi,0) -- (pi,0);         %x-achse
             \draw [thick, ->](0,-1.5) -- (0,pi);         %y-achse
             \draw [blue, domain=-1:1.43] plot (\x, {pow(\x, 3)});
-            \node [left] at (1.5,2) {$ X^3$};
+            \node [left] at (1.5,2.8) {$ X^3$};
             \draw [blue, domain=-pi:pi] plot (\x, {sin(\x r)});
-            \node [left] at (pi,0) {sin(x)};
+            \node [left] at (pi,-0.3) {sin(x)};
             \draw [blue, domain= -1.2:pi] plot (\x, {\x});
             \node [left] at (2.9,2.9) {x};
         \end{tikzpicture}
+    \end{centering}
 \end{minipage}
 \end{multicols}
 \clearpage
