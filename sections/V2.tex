@@ -239,6 +239,9 @@ Der IGBT setzt such aus einem Bipolartransistor $ T_2 $ und einem MOSFET $ T_1 $
 %    &&&\\
 %    &&&\\    
 %\end{tabular}
+
+%=========================================
+\clearpage
 \begin{minipage}{0.7\linewidth}
 \section{Thyristoren}
 Ein Thyristor besteh aus vier Halbleiterschichten d.h. aus drei pn-Übergängen\newline
@@ -251,6 +254,28 @@ Thyristoren sind  \" einschaltbare Dioden\". Thyristoren werden mit dem Zündimp
 \includegraphics[width=0.15\linewidth]{images/thyrESB}
 \includegraphics[width=0.4\linewidth]{images/thyrKennlinie}
 \includegraphics[width=0.45\linewidth]{images/thyrSchaltung}
+
+\subsection{Thermische Eratzschaltung}
+\begin{tabular}{ll}
+	\textbf{Thermische Kenngrösse}			& \textbf{Elektrische Kenngrösse}\\
+	Wärmeleistung P [W]						& Strom I  [A]\\
+	Temperaturunterschied $ \vartheta $[K] 	& Spannung [V]\\
+	Wärmewiderstand $ R_{th} $ {K/W}		& Widerstand (V/A)\\
+\end{tabular}
+
+\begin{multicols}{2}
+	\begin{minipage}{\linewidth}
+		\subsubsection{Thyrisor ohne Kühlung}
+		\includegraphics[width=0.5\linewidth]{images/thyrOK}
+		\[ \vartheta_{vJ}-\vartheta_U=P \cdot (R_{th\; JG}+R_{th\; GU}) \]		
+	\end{minipage}
+
+	\begin{minipage}{\linewidth}
+		\subsubsection{Thyrisor mit Kühlung}
+		\includegraphics[width=0.5\linewidth]{images/thyrMK}
+		\[ \vartheta_{vJ}-\vartheta_U=P \cdot (R_{th\; JG}+R_{th\; GK}+R_{th\; KU})\qquad R_{th \; KU}=\dfrac{\Delta \vartheta}{P} \]	
+	\end{minipage}
+\end{multicols}
 
 \begin{minipage}{0.5\linewidth}
     \subsection{Abschaltbarer Thyristor}
