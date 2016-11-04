@@ -54,7 +54,7 @@
     \\ \hline    
     \hline
     Berechnung des Mittelwertes&
-    $X_{AV} = \frac{1}{T}\int\limits_{0}^{T}x(t)dt$
+    $X_{AV} = \frac{1}{T}\int\limits_{0}^{T}x(t)dt = \frac{1}{2\pi}\int\limits_{min}^{2\pi}\hat{U}_m\cdot sin(\beta)\diff \beta$
     &\\
     \hline
     Berechnung des Gleichwertes
@@ -167,7 +167,8 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
             \node [left] at (pi,-1) {cos(x)};
             \draw [blue, domain=-pi:pi] plot (\x, {abs(\x});
             \node [left] at (2.9,2.9) {|x|};
-        \end{tikzpicture}
+        \end{tikzpicture}
+
     \end{centering}
     \end{minipage}
                 
@@ -187,7 +188,8 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
             \node [left] at (pi,-0.3) {sin(x)};
             \draw [blue, domain= -1.2:pi] plot (\x, {\x});
             \node [left] at (2.9,2.9) {x};
-        \end{tikzpicture}
+        \end{tikzpicture}
+
     \end{centering}
 \end{minipage}
 \end{multicols}
