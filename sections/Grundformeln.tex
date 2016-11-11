@@ -28,12 +28,18 @@
 %    
 %\end{longtable}
 \subsection{Leistungen}
-\includegraphics[width=0.4\linewidth]{images/LeistungsDreieck}
+\begin{minipage}{0.4\linewidth}
+    \includegraphics[width=\linewidth]{images/LeistungsDreieck}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{0.5\linewidth}
+    Verzerrungsblindleistung entsteht, wenn $ I_1 $ und $ U $ nicht in Phase sind. Wenn Oberwellen von Spannung und Strom die gleichen Frequenzanteile besitzen ensteht keine Verzerrung.
+\end{minipage}
 \begin{longtable}{| p{.3\textwidth} | p{.40\textwidth} |p{.25\textwidth}|}
     \hline
     
     \textbf{{\color{blue}Scheinleistung}}&
-    \vspace{-0.5cm}\[ S=U\cdot I =  \sqrt{P^2+Q^2} = \sqrt{P^2+Q_1^2+Q_d^2} \]\vspace{-0.5cm}&\textbf{i konjkolpex????}
+    \vspace{-0.5cm}\[ S=U\cdot I =  \sqrt{P^2+Q^2} = \sqrt{P^2+Q_1^2+Q_d^2} \]\vspace{-0.5cm}&\textbf{i konjkolpex????}\newline V5S10 vs V7S14
     \\ \hline
     
     \textbf{Wirkleistung}&
@@ -43,13 +49,13 @@
     \textbf{\color{yellow}Blindleistung}&
     \vspace{-0.5cm}\[ Q=U\cdot I_1 \cdot sin\varphi_1 = \sqrt{Q_1^2+Q_d^2} \]
     \[ Q_1 = S_1 \cdot sin \varphi_1 \]
-    \[ Q_d = U\cdot \sqrt{\sum_{m=2}^{\infty}I_m^2}\]\vspace{-0.2cm}&
+    \[ Q_d = U\cdot \sqrt{\sum_{m=2}^{\infty}I_m^2}  = k \cdot S \]\vspace{-0.2cm}&
     $ Q_1 $= Grundschwingungs- \newline \quad Blindleistung\newline
     $ Q_d $= Verzerrungsleistung\newline
     \\ \hline
       
     \textbf{\color{green}Grundschwingungs-\newline scheinleistung}&
-    \vspace{-0.5cm}\[ S_1=U_1\cdot I_1 = \sqrt{P^2+Q_1^2} \]\vspace{-0.5cm}&
+    \vspace{-0.5cm}\[ S_1=U_1\cdot I_1 = \sqrt{P^2+Q_1^2}\]\vspace{-0.5cm}&
     $ S_1 $= Grundschwingungs-Scheinleistung
     \\ \hline    
     \hline
@@ -71,6 +77,10 @@
     \hline
     Formfaktor
     & $F = \frac{X_{RMS}}{\overline{|X|}}$
+    &\\
+    \hline
+    Klirrfaktor
+    &$ k= \dfrac{\sqrt{\sum_{k=2}^{\infty} I_k^2}}{\sqrt{\sum_{k=1}^{\infty} I_k^2}}$
     &\\
     \hline
     Welligkeit
