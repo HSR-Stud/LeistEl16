@@ -5,13 +5,29 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
 \begin{minipage}{0.75\linewidth}
     Tiefsetzsteller (Buck-Converter) $U_a < U_e  $\newline
     \textbf{Rechnung ohne C}\newline
-    \[ V_1 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t} \qquad 0<t<T_{on} \]
-    \[ 0 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t} \qquad T_{on}<t<T_{s} \]    
-    \[ i_L=\frac{V_1}{R_1}+ \frac{V_1}{R_1}\cdot \frac{e^{-\frac{T_{off}}{\tau}}-1}{1-e^{-\frac{T_{s}}{\tau}}}\cdot e^{-\frac{t}{\tau}} \qquad 0<t<T_{on}  \]
-    \[ i_L=\frac{V_1}{R_1}\cdot \frac{1-e^{-\frac{T_{on}}{\tau}}}{1-e^{-\frac{T_{s}}{\tau}}}\cdot e^{-\frac{t-T_{on}}{\tau}} \qquad T_{on}<t<T_{s}  \]    
-    \[ T_{on}=-\tau \cdot ln\frac{i_{Lmin}}{i_{Lmax}}= -\frac{L_1}{R_1}\cdot ln\frac{i_{Lmin}}{i_{Lmax}} \]    
-    \[ T_{off}=-\tau \cdot ln\left(\frac{\frac{1}{i_{Lmax}}\cdot\frac{V_1}{R_1}-1}{\frac{1}{i_{Lmax}}\cdot \frac{V_1}{R_1}-e^{-\frac{T_off}{\tau}}}\right) \]
-    \[ V_{out}=V_{in}\cdot \frac{T_{on}}{T_{on}+T_{off}}-V_D\frac{T_{off}}{T_{on}+T_{off}} \]
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{p{9cm} p{3cm}}
+        $ V_1 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t} $ &
+        $ 0<t<T_{on} $
+        \\  
+        $ 0 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t}$ & $T_{on}<t<T_{s} $
+        \\  
+        $ i_L=\frac{V_1}{R_1}+ \frac{V_1}{R_1}\cdot \frac{e^{-\frac{T_{off}}{\tau}}-1}{1-e^{-\frac{T_{s}}{\tau}}}\cdot e^{-\frac{t}{\tau}}$ &
+        $ 0<t<T_{on}  $
+        \\  
+        $ i_L=\frac{V_1}{R_1}\cdot \frac{1-e^{-\frac{T_{on}}{\tau}}}{1-e^{-\frac{T_{s}}{\tau}}}\cdot e^{-\frac{t-T_{on}}{\tau}}$ &
+        $ T_{on}\leq t \leq T_{s}  $
+        \\ 
+        $ i_{Lmax} = i_L(T_{on}) \qquad i_{Lmin} = i_L(0) = i_L(T_s) $    
+        & \\ 
+        $ T_{off}=-\tau \cdot ln\frac{i_{Lmin}}{i_{Lmax}}= -\frac{L_1}{R_1}\cdot ln\frac{i_{Lmin}}{i_{Lmax}} $
+        & \\    
+        $ T_{on}=-\tau \cdot ln\left(\dfrac{\frac{1}{i_{Lmax}}\cdot\frac{V_1}{R_1}-1}{\frac{1}{i_{Lmax}}\cdot \frac{V_1}{R_1}-e^{-\frac{T_off}{\tau}}}\right) $
+        & \\ 
+        $ V_{out}=V_{in}\cdot \frac{T_{on}}{T_{on}+T_{off}}-V_D\frac{T_{off}}{T_{on}+T_{off}} $
+        & \\ 
+    \end{tabular}
+\renewcommand{\arraystretch}{1}
 \end{minipage}
 \begin{minipage}{0.25\linewidth}
     \includegraphics[width=\linewidth]{images/BuckOnOff}
@@ -45,7 +61,8 @@ Inverswandler, Umkehrung der Polarität\newline
 \subsubsection{Gleichstrom-Schalter}
 \[ U_1=(L + L_{\sigma})\cdot \frac{\diff i_L}{\diff t}+R\cdot i_L \qquad t_{on} \leq t \leq t_{off}\]
 \[ 0=L\cdot \frac{\diff i_L}{\diff t}+ R\cdot i_L \qquad t_{off}\leq t \]
-\[ i_L(t)=\frac{U_1}{R}\cdot(1-e^{-\frac{t-t_{on}}{\tau}}) \qquad t_{on} \leq t \leq\]
+\[ i_L(t)=\frac{U_1}{R}\cdot(1-e^{-\frac{t-t_{on}}{\tau}}) \qquad t_{on} \leq t \leq t_{off}\]
 \[ i_L(t)=\frac{U_1}{R}\cdot e^{\frac{t-t_{off}}{\tau}} \qquad t_{off}\leq t \]
 \subsubsection{Gleichstrom-Steller}
+\[ U_{2AV}=\frac{1}{t_{on}+t_{off}}\int_{0}^{t_e}U_1\cdot \diff t = \frac{t_{on}}{t_{on}+t_{off}}U_1 \]
 \clearpage
