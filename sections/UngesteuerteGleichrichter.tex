@@ -77,14 +77,19 @@ Die Diode wird als Ideal betrachtet $ \rightarrow $ keine Schwellenspannung oder
     \\
     
     Wirkleistung R: &
-    $ P= \frac{1}{2\pi}\int\limits_{0}^{\pi}\frac{u_R^2(\alpha)}{R}\cdot \diff \alpha = \frac{U_{R \; RMS}^2}{R}=\frac{1}{R}\frac{U_{2m}^2}{4} $
+    $ P= \frac{1}{2\pi}\int\limits_{0}^{\pi}\frac{u_R^2(\alpha)}{R}\cdot \diff \alpha = \frac{U_{R \; RMS}^2}{R}=\frac{1}{R}\frac{U_{2m}^2}{4} $&
+    \\
+    
+    Wirkleistung Sekundärseite: &
+    $P_2 = U_2 \cdot (I_2)_1 \cdot cos(\varphi)_1 = \frac{U_{2m}}{\sqrt{2}} \cdot \frac{b_1}{\sqrt{2} \cdot R}$&
+    \\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
 %===================================================================
 \clearpage
 
-\subsubsection{B2U}
+\subsection{B2U}
 \begin{minipage}{0.4\textwidth}
     \includegraphics[width=\linewidth]{images/PrakUGB2}
 \end{minipage}
@@ -99,17 +104,48 @@ Die Diode wird als Ideal betrachtet $ \rightarrow $ keine Schwellenspannung oder
 
 Im gegensatz zur M1U-Schaltung wird hier die negative Netzspannung zur Gleichrichtung genutzt.\newline
 Die Schaltung wird oft mit Glättungskondensator betrieben.
-\begin{longtable}{| p{.33\textwidth} | p{.40\textwidth} | p{.25\textwidth} |} %TODO Formeln einfügen
+\begin{longtable}{| p{.33\textwidth} | p{.40\textwidth} | p{.25\textwidth} |} 
     \hline
     \textbf{Grundgleichungen}&
     \[ \bar{U}_{OUT} = 2\dfrac{\hat{U}}{\pi}\]&\\
     \hline   
 \end{longtable}
+\subsubsection{Rechnungsbsp.}
+\textbf{Übung 3 - Gleichrichter B2U}\newline
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{ p{.3\textwidth}  p{.40\textwidth}  p{.25\textwidth}}
+    Ausgangslage:&
+    $ U_2= U_{2m}\cdot sin(2\cdot \pi\cdot f\cdot t)$&
+    \\
+    Mittelwert Spannung: &
+    $ U_{R \; AV}= \frac{1}{\pi} \int\limits_{0}^{\pi} U_{2m}\cdot sin(\alpha)\cdot\diff\alpha=\frac{2\cdot U_{2m}}{\pi} $ &
+    $ \alpha=\omega t $
+    \\
+    
+    Effektivwert Spannung:   &
+    $ U_{R \; RMS}= \sqrt{\frac{1}{\pi}\int\limits_{0}^{\pi} U_{2m}^2\cdot sin(\alpha)^2\cdot\diff\alpha} = \frac{U_{2m}}{\sqrt{2}} $ &
+    \\ 
+    
+    Mittelwert Strom: &
+    $ I_{R \; AV}=\frac{U_{R \; AV}}{R_L}= \frac{2}{\pi}\frac{U_{2m}}{R}= \frac{2}{\pi} I_{2m} $ &
+    \\
+    
+    Effektivwert Strom: &
+    $ I_{R \; RMS}=\frac{U_{R \; RMS}}{R}= \frac{U_{2m}}{\sqrt{2}\cdot R}= \frac{I_{2m}}{\sqrt{2}} $ &
+    \\
+    
+    Wirkleistung R: &
+    $ P= \frac{1}{\pi}\int\limits_{0}^{\pi}\frac{u_R^2(\alpha)}{R}\cdot \diff \alpha = \frac{U_{R \; RMS}^2}{R}=\frac{1}{R}\frac{U_{2m}^2}{2} $&
+    \\
+    Wirkleistung Sekundärseite: &
+    $P_2=U_2\cdot I_2=U_2\cdot \frac{U_2}{R}=U_2\cdot \frac{U_{2m}}{\sqrt{2}R}$&
+    \\
+\end{tabular}
 
 %===================================================================
 %\clearpage
 
-\subsubsection{B6U}
+\subsection{B6U}
 \includegraphics[width=0.3\linewidth]{images/PrakUGB6}
 \includegraphics[width=0.3\linewidth]{images/PrakUGB6Kl1}
 \includegraphics[width=0.3\linewidth]{images/UGB6OW}\newline
