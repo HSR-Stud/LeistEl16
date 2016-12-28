@@ -1,5 +1,5 @@
-\subsection{Ungesteuerter Gleichrichter}
-\subsubsection{M1U}
+\section{Ungesteuerter Gleichrichter}
+\subsection{M1U}
 \vspace{-0.5cm}
 \begin{minipage}{0.4\linewidth}
     \includegraphics[width=\linewidth]{images/PrakUGM1}
@@ -17,39 +17,25 @@
 %\includegraphics[width=0.4\linewidth]{images/UGRM1U}
 %\includegraphics[width=0.2\linewidth]{images/UGRM1US} \newline
 Die Diode wird als Ideal betrachtet $ \rightarrow $ keine Schwellenspannung oder Innenwiderstand
-\begin{longtable}{| p{.33\textwidth} | p{.40\textwidth} | p{.25\textwidth} |} %TODO Formeln einfügen bzw anpassen
+\begin{longtable}{| p{.3\textwidth} | p{.40\textwidth} | p{.25\textwidth} |} %TODO Formeln einfügen bzw anpassen
     \hline
     \textbf{Grundgleichungen}&
     \[ U_2 = U_D + U_R \]
     \[ U_R = I_2 \cdot R\]
-    \[ \bar{U}_{OUT} = \dfrac{\hat{U}}{\pi}\]&\\
-    \hline
+    \[ \bar{U}_{OUT} = \dfrac{\hat{U}}{\pi}\]&
     \textbf{Durchlassrichtung}\newline
-    $ 0 < \omega t < \pi $&
-    \vspace{-0.3cm}\[ U_2 = U_R \qquad U_D = 0 \] \vspace{-0.3cm}&\\
-    \hline   
+    $ 0 < \omega t < \pi $\newline
+    $U_2 = U_R \qquad U_D = 0$\newline
+
     \textbf{Sperrichtung}\newline
-    $ \pi < \omega t < 2\pi $&
-     \vspace{-0.3cm}\[ U_2=U_D \qquad U_R = 0 \] \vspace{-0.3cm}&\\
+    $ \pi < \omega t < 2\pi $\newline
+    $ U_2=U_D \qquad U_R = 0 $\newline
+    \\
     \hline
     
     \textbf{Wirkleistung der Last R}&
     \[ P=\frac{1}{2\pi} \int_{0}^{2\pi} p(\alpha) d\alpha = \dfrac{U_{R\;RMS}^2}{R} \]&
     \\ \hline
-%    
-%    \textbf{Scheinleistung}&
-%    \[ S_2 = U_2 \cdot I_2 = U_2 \cdot I_{R RMS} \]&
-%    \\ \hline
-%        
-%    \textbf{Grundschwingugngsblindleistung}&
-%    \[ Q_2 = I_{2 1} \cdot sin(\varphi_{2 1}) = 0 \]&
-%    \\ \hline    
-%    
-%        
-%    \textbf{Verzerrungsleistung}&
-%    \[ Q_v = U_2 \cdot \sqrt{\sum_{k=2}^{\infty} {I_2^2}_k} = \sqrt{S_2^2 - P_2^2} \]&
-%    \\ \hline %STIMMT DIES FORMEL? Siehe Grundformel
-
 \end{longtable}
 
 %
@@ -66,6 +52,35 @@ Die Diode wird als Ideal betrachtet $ \rightarrow $ keine Schwellenspannung oder
     \textbf{ \qquad R + L+ freilaufDiode}\newline
     \includegraphics[width=\linewidth]{images/M1URLD}
 \end{multicols}
+\subsubsection{Rechnungsbsp.}
+\textbf{Übung 2 - Gleichrichter M1U}\newline
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{ p{.3\textwidth}  p{.40\textwidth}  p{.25\textwidth}}
+    Ausgangslage:&
+    $ U_2= U_{2m}\cdot sin(2\cdot \pi\cdot f\cdot t)$&
+    \\
+    Mittelwert Spannung: &
+    $ U_{R \; AV}= \frac{1}{2 \pi} \int\limits_{0}^{\pi} U_{2m}\cdot sin(\alpha)\cdot\diff\alpha=\frac{U_{2m}}{\pi} $ &
+    $ \alpha=\omega t $
+    \\
+    
+    Effektivwert Spannung:   &
+    $ U_{R \; RMS}= \sqrt{\frac{1}{2 \pi}\int\limits_{0}^{\pi} U_{2m}^2\cdot sin(\alpha)^2\cdot\diff\alpha} = \frac{U_{2m}}{2} $ &
+    \\ 
+    
+    Mittelwert Strom: &
+    $ I_{R \; AV}=\frac{U_{R \; AV}}{R_L}= \frac{1}{\pi}\frac{U_{2m}}{R}= \frac{1}{\pi} I_{2m} $ &
+    \\
+    
+    Effektivwert Strom: &
+    $ I_{R \; RMS}=\frac{U_{R \; RMS}}{R}= \frac{U_{2m}}{2\cdot R}= \frac{I_{2m}}{2} $ &
+    \\
+    
+    Wirkleistung R: &
+    $ P= \frac{1}{2\pi}\int\limits_{0}^{\pi}\frac{u_R^2(\alpha)}{R}\cdot \diff \alpha = \frac{U_{R \; RMS}^2}{R}=\frac{1}{R}\frac{U_{2m}^2}{4} $
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
 %===================================================================
 \clearpage
 
