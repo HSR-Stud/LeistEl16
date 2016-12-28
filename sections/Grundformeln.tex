@@ -44,7 +44,12 @@
     
     \textbf{Wirkleistung}&
     \vspace{-0.5cm}\[ P=U\cdot I_1 \cdot cos\varphi_1 \]\vspace{-0.5cm}&
-    \\ \hline 
+    \\ 
+    Wirkleistung (Trafoseitig)&
+   \vspace{-0.5cm} \[ P = U_{RMS} \cdot I_{1\; RMS} \cdot sin(\varphi_1) \]\vspace{-0.5cm}&
+    $ I_1 $= erste harmonische Komponente\newline
+    $ \varphi_1 $= Phasenverschiebung
+    \\\hline 
        
     \textbf{\color{yellow}Blindleistung}&
     \vspace{-0.5cm}\[ Q=U\cdot I_1 \cdot sin\varphi_1 = \sqrt{Q_1^2+Q_d^2} \]
@@ -157,13 +162,27 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
     \quad
     (n=0,1,2,3,\ldots, b_0 = 0)$$
 \end{minipage}
-
+\subsubsection{Fourierreihe für beliebige Periode}
+Gegeben: Periodische Funktion f mit \textbf{Periode L}
+\textbf{Reelle Fourierreihe}
+\begin{centering}
+    $$ f(t) = \frac{a_0}{2} | + \sum_{k=1}^{\infty}\left[a_k cos\left(\frac{2\pi}{L}kt\right)+b_k sin(\left(\frac{2\pi}{L}kt\right) \right] $$
+\end{centering}
+\vspace{-0.5cm}
+\begin{multicols}{3}
+{
+    $  a_0 = \frac{1}{L} \int\limits_{0}^{L} f(\alpha) \diff \alpha $
+    
+    $  a_k =\frac{2}{L} \int\limits_{0}^{L}  f(\alpha) cos\left(\frac{2\pi}{L}k\alpha\right) \diff \alpha$
+    
+    $ b_k = \frac{2}{L} \int\limits_{0}^{L} f(\alpha) sin\left(\frac{2\pi}{L}k\alpha\right) \diff \alpha $
+}
+\end{multicols}
 \subsubsection{Sätze zur Berechnung der Fourierkoeffizienten}
 \textbf{Symmetrie}
 \begin{multicols}{2}
     \begin{minipage}{\linewidth}
-        \textbf{Gerade}\newline       
-        $f(t) = f(-t)$\newline
+        \textbf{Gerade $\quad f(t) = f(-t)$}\newline       
         Symetrisch an Y-Achse
         \[ b_{n} = 0, a_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot cos(n \omega t) \diff t \]      
         \begin{tikzpicture}[scale = 0.7]
@@ -180,8 +199,7 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
     \end{minipage}
                 
     \begin{minipage}{\linewidth}
-        \textbf{Ungerade}\newline
-        $f(-t) = -f(t)$ \newline
+        \textbf{Ungerade $\qquad f(-t) = -f(t)$}\newline
         Punktsymetrisch am Ursprung
         \[  a_{n} = 0, b_{n} = \frac{4}{T}\int\limits_{0}^{\frac{T}{2}} f(t) \cdot sin(n \omega t)\diff t \]
         \begin{tikzpicture}[scale = 0.7]
