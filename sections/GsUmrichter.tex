@@ -7,6 +7,7 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
 \begin{minipage}{0.75\linewidth}
     Tiefsetzsteller (Buck-Converter) $U_a < U_e  $\newline
     \textbf{Übung 6 Gleichstrom Umrichter $ \rightarrow $ Buck-Converter}\newline
+    DutyCycle $ D = \frac{V_{out}}{V_1} \qquad T_{on} = DT_s \qquad T_{off} = (1 -D)T_s $\newline
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{9cm} p{3cm}}
         $ V_1 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t} $ &
@@ -41,13 +42,13 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
     Wenn der Rippel der Amplitude zu hoch ist, wird die Spule komplett entladen bevor die Periode zu ende ist.
 
     \begin{tabular}{p{8cm} p{4cm}}
-    $ T_{off} = T_{off1}+T_{off2} $ &
-    $ T_{off1}$ = Diode leitet \newline
+    $ T_{off} = T_{\delta}+T_{off2} $ &
+    $ T_{\delta}$ = Diode leitet \newline
     $ T_{off2}$ = Diode sperrt
     \\  
     
     $a' = a (U\frac{V_1}{V_{out}}-1)$&
-    $ a = \frac{T_{on}}{T_S} \qquad  a' = \frac{T_{off1}}{T_S}$
+    $ a = \frac{T_{on}}{T_S} \qquad  a' = \frac{T_{\delta}}{T_S}$
     \\
     
     $ \varDelta i_2 = \frac{V_1-V_{out}}{L}\cdot a \cdot T_S $&
@@ -55,13 +56,31 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
     \\
     
     $ \varDelta i_2 = \frac{V_{out}}{L}\cdot a' \cdot T_S $&
-    $ T_{on} < t < T_{off1} $ fallend
- 
-\end{tabular}
+    $ T_{on} < t < T_{\delta} $ fallend
+    \\
+    
+    $ \varDelta i_{2 \; max} = \frac{T_S\cdot V_{1}}{4L} $&
+    für a = $\frac{1}{2} $
+    \\
+    
+    $ \bar{i}_{2} = \frac{\varDelta i_2}{2}a\frac{V_1}{V_{out}} = a^2 \frac{T_s V_1}{2 L}\frac{V_1 - V_{out}}{V_{out}} $&
+    \\
+    
+    $ V_{out}= V_1 \frac{1}{\frac{2L\cdot I_0}{D^2\cdot V_1 \cdot T_s}+1} $&
+    \\
+    
+     
+    \end{tabular}
 \end{minipage}
 \begin{minipage}{0.25\linewidth}
     \includegraphics[width=\linewidth]{images/BuckSwitchLueck}
+\end{minipage}
+
+\begin{minipage}{0.4\linewidth}
     \includegraphics[width=\linewidth]{images/LueckGrenze}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+    \includegraphics[width=\linewidth]{images/LueckBetrieb}
 \end{minipage}
 \clearpage
 
