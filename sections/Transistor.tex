@@ -4,7 +4,7 @@
 \subsection{Bipolarer Transistor}
 \vspace{-0.2cm}
 \subsubsection{Wirkungsprinzip}
-Ein Bipolartransistor besteh aus drei dünnen dotierten Halbleiterschichten, d.h. aus zwei pn-Übergängen. Gemäss der Reihenfolge und dem Dotierungstyp der Schichtung werden Bipolartransistoren in npn- und pnp-Typen unterteilt.\newline Als Leistungstransistoren werden überwiegend npn- Transistoren in der Emmitter-Schaltung verwendet\newline
+Ein Bipolartransistor besteht aus drei dünnen dotierten Halbleiterschichten, d.h. aus zwei pn-Übergängen. Gemäss der Reihenfolge und dem Dotierungstyp der Schichtung werden Bipolartransistoren in npn- und pnp-Typen unterteilt.\newline Als Leistungstransistoren werden überwiegend npn-Transistoren in der Emitter-Schaltung verwendet\newline
 \hspace*{2cm}
 \begin{tabular}{ccc}
      \textbf{Wirkungsprinzip}&\textbf{Aufbau}&\textbf{Schaltzeichen}\\
@@ -28,17 +28,20 @@ Ein Bipolartransistor besteh aus drei dünnen dotierten Halbleiterschichten, d.h
 \begin{minipage}{0.4\linewidth}
     \includegraphics[width=0.8\linewidth]{images/npnTranskennlinie}
 \end{minipage}
-\subsubsection{Kennwerte}%TODO Leftaligned
-\begin{tabularx}{0.5\linewidth}{l p{7cm}} 
+\subsubsection{Kennwerte}
+\begin{minipage}{0.5\linewidth}
+	\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l p{7cm}} 
     \textbf{$ U_{CES} $}&\textbf{Kollektor-Emitter-Sperrspannung}\\
-    &Der höchstzulässige Wert der $ U_{CES} $bei Ansteuerung mit einer negativen $ U_{BE} $\\
+    &Der höchstzulässige Wert der $ U_{CES} $ bei Ansteuerung mit einer negativen $ U_{BE} $\\
     \textbf{$ U_{CE0} $}&\textbf{Kollektor-Emitter-Sperrspannung}\\%RICHTIG??
-    &Der höchstzulässige Wert der $ U_{CE} $ bei offenem Basisanschluss\\
+    & Der höchstzulässige Wert der $ U_{CE} $ bei offenem Basisanschluss\\
     \textbf{$ I_{CAVM} $}&\textbf{Kollektor-Dauergrenzstrom}\\
-    &Der höchstzulässige Wert des Gleichstrom-Mittelwerts bei vorgegebener Temperatur\\
+    &\mbox{Der höchstzulässige Wert des Gleichstrom-} \mbox{Mittelwerts bei vorgegebener Temperatur}\\
     \textbf{$ I_{CRM} $}&\textbf{periodischer Kollektor-Spitzenstrom}\\
-    &der höchstzulässige Wert eines Pulsstromes mit angegebener Periodendauer und Einschaltdauer\\
-\end{tabularx}
+    &\mbox{Der höchstzulässige Wert eines Pulsstromes} \mbox{mit angegebener Periodendauer und Einschaltdauer}\\
+\end{tabular}
+\end{minipage}
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=\linewidth]{images/npnTransESV}
 \end{minipage}
@@ -59,25 +62,25 @@ Ein Bipolartransistor besteh aus drei dünnen dotierten Halbleiterschichten, d.h
 
 \vspace*{-1cm}
 \subsection{Darlington-Transistoren}
-\begin{wrapfigure}{r}{2cm}
-    \includegraphics[width=\linewidth]{images/darlingtonSymbol}
-\end{wrapfigure}
-Der Stromverstärkungsfaktor der Leistungstransistoren ist relativ klein. Deswegen ist ein straker Basisstrom für diese Transistoren notwendig. Ein Darlington-Transistor löst diese Problem.
-
+%\begin{wrapfigure}{r}{2cm}
+%    \includegraphics[width=\linewidth]{images/darlingtonSymbol}
+%\end{wrapfigure}
+Der Stromverstärkungsfaktor der Leistungstransistoren ist relativ klein. Deswegen ist ein starker Basisstrom für diese Transistoren notwendig. Ein Darlington-Transistor löst dieses Problem.\\[0.1cm]
 \begin{minipage}{0.6\linewidth}
     \subsubsection{Formeln}
     \vspace{-0.2cm}
-    $ \beta = \text{Kleinsignaglversätrkung}$\newline
+    $ \beta = \text{Kleinsignalverstärkung}$\newline
     $B = \text{Grosssignalverstärkung}$
     \vspace{-0.2cm}
-    \[ \beta_1 = \dfrac{i_{C1}}{i_{B1}} \qquad \beta_2 = \dfrac{i_{C2}}{i_{B2}} \]    
+    \[ \beta_1 = \dfrac{i_{C1}}{i_{B1}}, \qquad \beta_2 = \dfrac{i_{C2}}{i_{B2}} \]    
     \[ i_{E1} = i_{C1}+i_{B1}=(1+\beta_1)i_{B1} = i_{B2} \]
     \[ i_{C2} = \beta_2 i_{B2} = \beta_2 i_{E1} = \beta_2 (1 + \beta_1)i_{B1}=\beta_{ges}i_{B1} \]
     \[ \beta_{ges} = \beta_2(1 + \beta_1) \approx \beta_1 \beta_2 \]    
 \end{minipage}
 \begin{minipage}{0.3\linewidth}
     \subsubsection{Aufbau}
-    \includegraphics[width=\linewidth]{images/darlingtonaufbau}
+    \includegraphics[width=4cm]{images/darlingtonaufbau}
+     \includegraphics[width=1.5cm]{images/darlingtonSymbol}
 \end{minipage}
  \vspace{-0.2cm}
 \subsubsection{Vor und Nachteile}
@@ -85,7 +88,8 @@ Der Stromverstärkungsfaktor der Leistungstransistoren ist relativ klein. Desweg
 \begin{multicols}{2}
     \begin{minipage}{\linewidth}
         \begin{itemize}
-            \item [+] Gleichbleibender Platzbedarf, höhere Stromverstärkung
+            \item [+] Gleichbleibender Platzbedarf
+            \item [+] höhere Stromverstärkung
             \item [+] $ B \approx B_1 \cdot B_2 $ im Bereich <1000 
             \item [+] $ \beta \approx \beta_1 \cdot \beta_2 $ im Bereich <50'000
         \end{itemize}
@@ -94,7 +98,7 @@ Der Stromverstärkungsfaktor der Leistungstransistoren ist relativ klein. Desweg
     \begin{minipage}{1.2\linewidth}
         \begin{itemize}
             \item [-] grosse Phasenverschiebung
-            \item [-] für Hochfrequenzanwendungen ungeeingnet
+            \item [-] für Hochfrequenzanwendungen ungeeignet
             \item [-] langsame Schaltzeiten
             \item [-] doppelte Basis-Emitter-Spannung
         \end{itemize}
@@ -109,20 +113,19 @@ Für effiziente Schaltanwendungen eignen sich Darlingtontransistoren wegen diese
     \newline
     \includegraphics[width=\linewidth]{images/mosfetprak}
 \end{wrapfigure}
-Die elektrishe Leitfähigkeit des Substrats ist duch ein el. Feld gesteuert. Das el. Feld ruft im Substraht einee Influenzladung hervor.\newline
-Die Gate-Elektrode ist durch ein Metaloxid vom Substraht isoliert.\newline
-\vspace{0.4cm}
+Die elektrische Leitfähigkeit des Substrats ist durch ein el. Feld gesteuert. Das el. Feld ruft im Substrat eine Influenzladung hervor.\newline
+Die Gate-Elektrode ist durch ein Metalloxid vom Substrat isoliert.\\[0.3cm]
 \begin{tabular}{ll}
     S = Source & D = Drain\\
-    G = Gate & B = Bulk(Substraht)\\
-\end{tabular}\newline
-$ U_{DS} $ ist positiv damit ist der rechte pn-Übergang in Sperrrichtung gepolt. Deswegen kann keink Storm in beide Richtungen fliessen.\newline
+    G = Gate & B = Bulk (Substrat)\\
+\end{tabular}\\[0.3cm]
+$ U_{DS} $ ist positiv damit ist der rechte pn-Übergang in Sperrrichtung gepolt. Deswegen kann kein Strom in beide Richtungen fliessen.\newline
 $ \rightarrow $ Der Transistor ist selbstsperrend.\newline
-\danger Sobald eine positive Spannung zwischen $ G $ und $ S $ angelegt ist, entsteht ein leitfähiger n-Kanal und damit auch ein Strom vom D- zum S-Anschluss.
+\danger~Sobald eine positive Spannung zwischen $ G $ und $ S $ angelegt ist, entsteht ein leitfähiger n-Kanal und damit auch ein Strom vom \\D- zum S-Anschluss.
  \vspace{-0.2cm}
 \subsection{IGBT}
 Der IGBT setzt such aus einem Bipolartransistor $ T_2 $ und einem MOSFET $ T_1 $ zusammen.\newline
-    n- ist eine schwach dotierte Zone, welche zut Erhöhung der Spannungsfestigkeit verwendet wird.
+    n- ist eine schwach dotierte Zone, welche zur Erhöhung der Spannungsfestigkeit verwendet wird.
 \begin{center}
   \includegraphics[width=0.7\linewidth]{images/IGBTaufbau}
   \includegraphics[width=0.25\linewidth]{images/IGBTkennlinie}
@@ -131,10 +134,10 @@ Der IGBT setzt such aus einem Bipolartransistor $ T_2 $ und einem MOSFET $ T_1 $
 \subsubsection{Eigenschaften}
 \begin{multicols}{2}
     \begin{itemize}
-        \item Über die Kollektor-Emitter-strecke fällt mindestens die Schleusenspannug ab
-        \item kleine Durchlassverluste bei hehen Ströme
-        \item in Rückwärtsrichtung nur begrenzt Sperrfähig
-        \item Grosse Sperrverluste vorallem beim Abchlaten
+        \item \mbox{Über die Kollektor-Emitter-Strecke fällt} \newline \mbox{mindestens die Schleusenspannung ab}
+        \item Kleine Durchlassverluste bei hohen Strömen
+        \item In Rückwärtsrichtung nur begrenzt sperrfähig
+        \item Grosse Sperrverluste vorallem beim Abschalten
     \end{itemize}
 \end{multicols}
 \clearpage
