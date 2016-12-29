@@ -1,5 +1,39 @@
 \section{Wechselrichter}
 \subsection{Einphasig}
+\textbf{Amplitudenmodulation}\newline
+Um die Amplitude der Ausgangsspannung stufenlos zu verstellen, verwendet amn die \textbf{Pulsbreitenmodulation PWM}. \newline
+Ist die Taktzahl ein ganzzahliges Vielfaches der Grundfrequenz, so spricht man von einer synchronen Taktung, ansonsten von einer asynchronen.
+Bei Asynchroner Taktung treten Schwebungen der Grundfrequenz auf $ f_s = f_1 \pm f_T $ welche zusätzliche Verluste erteugen. Spätestens wenn die Taktdrequenz nur noch 10mal höher als die Grundfreq. ist muss auf Synchrone Taktung umgetsellt werden. \newline
+\begin{tabular}{ p{.30\textwidth}  p{.2\textwidth} }
+    Schalt oder Taktzahl&
+    $ q = \frac{f_s}{f_1} $
+    \\
+    
+    Schwebe-frequenz&
+    $ f_s = f_1 \pm f_T $
+    \\   
+\end{tabular}
+
+\textbf{Signalmodulation}\newline
+Durch die PWM sind die ausganssignale Rechteck-förmig. Um Motoren optimal anzusteuern braucht es Sinusförmige Signale.\newline
+
+\begin{tabular}{ p{.20\textwidth}  p{.3\textwidth} p{.4\textwidth}}
+    Modulation&
+    $$ m=M\cdot sin(\omega_1 \cdot t_1 \cdot \varphi_m) $$\newline
+    $$  M= \frac{\hat{u}_{U0,1}}{\frac{U_D}{2}} =\frac{\hat{u}_{U0,1}}{u_{U0,1}} $$&
+    m= Modulationsfunktion\newline
+    M= Modulationsgrad\newline
+    $ \varphi_m $= Phasenverschiebung der Grundfreq\newline
+    $ \omega_1 $= Kreisfreq der Grundfreq $ f_1 $
+    \\
+    
+    Aussteuerungsgrad&
+    $$A = \frac{\hat{u}_{U0,1}}{\frac{2}{\pi}U_D\sqrt{3}} $$&
+    $ 0\leq A \leq 1 $\newline
+    $ A_{max}=\frac{\pi}{4} $
+    \\   
+\end{tabular}
+
 \textbf{Übung 7 Einphasiger Wechselrichter}\newline
 \begin{tabular}{ p{.30\textwidth}  p{.2\textwidth} }       
         $\tau = \frac{L}{R} \qquad T = \frac{1}{f} \qquad \diff t = \frac{T}{N-1}$ \newline\newline&
@@ -20,7 +54,6 @@
         \\
 \end{tabular}
 \begin{minipage}{0.5\linewidth}
-    \vspace{-2cm}
         \includegraphics[width=0.9\linewidth]{images/WrEinphaseSchema}\newline
         \includegraphics[width=0.5\linewidth]{images/WrEinphaseTime}
 \end{minipage}
