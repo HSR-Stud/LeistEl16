@@ -1,21 +1,21 @@
 \section{Wechselrichter}
 \subsection{Einphasig}
 \textbf{Amplitudenmodulation}\newline
-Um die Amplitude der Ausgangsspannung stufenlos zu verstellen, verwendet amn die \textbf{Pulsbreitenmodulation PWM}. \newline
+Um die Amplitude der Ausgangsspannung stufenlos zu verstellen, verwendet man die \newline\textbf{Pulsbreitenmodulation PWM}. \newline
 Ist die Taktzahl ein ganzzahliges Vielfaches der Grundfrequenz, so spricht man von einer synchronen Taktung, ansonsten von einer asynchronen.
-Bei Asynchroner Taktung treten Schwebungen der Grundfrequenz auf $ f_s = f_1 \pm f_T $ welche zusätzliche Verluste erteugen. Spätestens wenn die Taktdrequenz nur noch 10mal höher als die Grundfreq. ist muss auf Synchrone Taktung umgetsellt werden. \newline
+Bei asynchroner Taktung treten Schwebungen der Grundfrequenz auf \newline $ f_s = f_1 \pm f_T $, welche zusätzliche Verluste erzeugen. Spätestens wenn die Taktfrequenz nur noch 10 mal höher als die Grundfrequenz ist muss auf synchrone Taktung umgestellt werden. \newline
 \begin{tabular}{ p{.30\textwidth}  p{.2\textwidth} }
-    Schalt oder Taktzahl&
+    Schalt- oder Taktzahl&
     $ q = \frac{f_s}{f_1} $
     \\
     
-    Schwebe-frequenz&
+    Schwebefrequenz&
     $ f_s = f_1 \pm f_T $
     \\   
 \end{tabular}
 
 \textbf{Signalmodulation}\newline
-Durch die PWM sind die ausganssignale Rechteck-förmig. Um Motoren optimal anzusteuern braucht es Sinusförmige Signale.\newline
+Durch die PWM sind die Ausgangssignale rechteckförmig. Um Motoren optimal anzusteuern braucht es sinusförmige Signale.\newline
 
 \begin{tabular}{ p{.20\textwidth}  p{.3\textwidth} p{.4\textwidth}}
     Modulation&
@@ -23,7 +23,7 @@ Durch die PWM sind die ausganssignale Rechteck-förmig. Um Motoren optimal anzus
     $$  M= \frac{\hat{u}_{U0,1}}{\frac{U_D}{2}} =\frac{\hat{u}_{U0,1}}{u_{U0,1}} $$&
     m= Modulationsfunktion\newline
     M= Modulationsgrad\newline
-    $ \varphi_m $= Phasenverschiebung der Grundfreq\newline
+    $ \varphi_m $= Phasenverschiebung der Grundfreq.\newline
     $ \omega_1 $= Kreisfreq der Grundfreq $ f_1 $
     \\
     
