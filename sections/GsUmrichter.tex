@@ -3,6 +3,7 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
 \vspace{-0.2cm}
 \[ \tau=\frac{L_1}{R_1} \qquad T_s=T_{on} + T_{off}\]
 \vspace{-1cm}
+%TODO V1 in V_in umbenennen
 \subsection{Buck-Converter}
 \begin{minipage}{0.75\linewidth}
     Tiefsetzsteller (Buck-Converter) $U_a < U_e  $\newline
@@ -31,7 +32,7 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
         & \\ 
     \end{tabular}
     \newline
-    \renewcommand{\arraystretch}{1}
+    
 \end{minipage}
 \begin{minipage}{0.25\linewidth}
     \includegraphics[width=\linewidth]{images/BuckOnOff}
@@ -68,25 +69,26 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
     
     $ V_{out}= V_1 \frac{1}{\frac{2L\cdot I_0}{D^2\cdot V_1 \cdot T_s}+1} $&
     \\
-    
-     
+         
     \end{tabular}
 \end{minipage}
+\renewcommand{\arraystretch}{1}
 \begin{minipage}{0.25\linewidth}
     \includegraphics[width=\linewidth]{images/BuckSwitchLueck}
 \end{minipage}
 
 \begin{minipage}{0.4\linewidth}
-    \includegraphics[width=\linewidth]{images/LueckGrenze}
+    \includegraphics[width=\linewidth]{images/BuckLueckGrenze}
 \end{minipage}
 \begin{minipage}{0.6\linewidth}
-    \includegraphics[width=\linewidth]{images/LueckBetrieb}
+    \includegraphics[width=\linewidth]{images/BuckLueckBetrieb}
 \end{minipage}
 \clearpage
 
 \subsection{Boost-Converter}
 \begin{minipage}{0.75\linewidth}
     Hochsetzsteller (Boost-Converter) $U_a > U_e  $\newline
+    $ D=1-\frac{V_1}{V_{out}} $\newline
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{9cm} p{3cm}}
         $ V_{Out}=V_{in}\cdot \left(1+\frac{T_{on}}{T_{off}} \right)$&
@@ -114,12 +116,19 @@ Ein Gleichstromumrichter dient zur Änderung von: \textbf{Polarität, Spannung, 
 \end{minipage}
 \subsubsection{Lückbetrieb}
 \begin{minipage}{0.75\linewidth}
-        todo
+        todo\newline
     
     \begin{tabular}{p{9cm} p{3cm}}
-        $ V_1 = i_L\cdot R_1+L_1\cdot\frac{\diff i_L}{\diff t} $ &
+        $ I_{L\;Max} = \frac{V_{in}\cdot T_s \cdot D}{L} $ &
         $ 0<t<T_{on} $
         \\  
+        
+        $ I_{L\;Max} + \frac{V_{in}-V_{out} T_{\delta}}{L} = 0 $ &
+        $ T_{on}<t<T_{\delta} $
+        \\  
+        
+        $ I_{out}=\frac{V_{in}^2\cdot D^2\cdot T_s}{2L(V_{out}-V_{in})} $&
+        \\
         
     \end{tabular}
 \end{minipage}
@@ -136,6 +145,22 @@ Inverswandler, Umkehrung der Polarität\newline
     \vspace{-1cm}
     \includegraphics[width=\linewidth]{images/InverseOnOff}
     \includegraphics[width=\linewidth]{images/InverseSwitch}
+\end{minipage}
+\subsubsection{Lückbetrieb}
+\begin{minipage}{0.75\linewidth}
+    $ D= \frac{V_{off}}{V_{off}+V_{on}} $\newline
+    todo\newline
+    
+    \begin{tabular}{p{9cm} p{3cm}}
+        $ I_{L\;Max} = \frac{V_{in}\cdot T_s \cdot D}{L} $ &
+        $ 0<t<T_{on} $
+        \\  
+
+    \end{tabular}
+\includegraphics[width=0.2\linewidth]{images/InverseLueckGrenze}
+\end{minipage}
+\begin{minipage}{0.25\linewidth}
+    \includegraphics[width=\linewidth]{images/InverseSwitchLueck}
 \end{minipage}
 \clearpage
 
