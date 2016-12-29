@@ -33,8 +33,9 @@
 \end{minipage}
 \hspace{1cm}
 \begin{minipage}{0.5\linewidth}
-    Verzerrungsblindleistung entsteht, wenn $ I_1 $ und $ U $ nicht in Phase sind. Wenn Oberwellen von Spannung und Strom die gleichen Frequenzanteile besitzen ensteht keine Verzerrung.
+    Verzerrungsblindleistung entsteht, wenn $ I_1 $ und $ U_1 $ nicht in Phase sind. Wenn Oberwellen von Spannung und Strom die gleichen Frequenzanteile besitzen entsteht \newline keine Verzerrung.
 \end{minipage}
+\renewcommand{\arraystretch}{1.5}
 \begin{longtable}{| p{.3\textwidth} | p{.40\textwidth} |p{.25\textwidth}|}
     \hline
     
@@ -98,11 +99,10 @@
 \end{longtable}
 %========================================================
 \clearpage
-
 \subsection{Fourier}
 \subsubsection{Allgemeine Form}
 Eine periodische Funktion lässt sich durch eine Reihe von Sinus- und Kosinusfunktionen darstellen.
-$$f(t) = \underbrace{\frac{a_{0}}{2}}_{Gleichanteil}+\underbrace{\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{k} \cdot sin(k \omega t))}_{Wechselanteil} = f_{AV}+ \sum_{k = 1}^{\infty} \underbrace{c_k}_{\makebox[0pt]{\text{\scriptsize Amplitue der Harmonischen}}} \cdot \sin(k\omega t + \varphi_k)$$
+$$f(t) = \underbrace{\frac{a_{0}}{2}}_{\text{Gleichanteil}}+\underbrace{\sum_{k = 1}^{\infty} (a_{k} \cdot cos(k \omega t)+ b_{k} \cdot sin(k \omega t))}_{\text{Wechselanteil}} = f_{AV}+ \sum_{k = 1}^{\infty}\hspace{-1.3cm} \underbrace{c_k}_{\substack{\scriptsize \\[0.1cm]\text{Amplitude der Harmonischen}}}\hspace{-1.3cm} \cdot \sin(k\omega t + \varphi_k)$$
 
 \begin{minipage}{0.5\linewidth}
     Die Koeffizienten der Entwicklung von $f(t)$ sind: \vfill
@@ -140,7 +140,7 @@ $$f(t) = \underbrace{\frac{a_{0}}{2}}_{Gleichanteil}+\underbrace{\sum_{k = 1}^{\
     $\int\limits_0^T \cos(n\omega t)\cdot \sin(m\omega t)dt=
     \begin{cases}
     0,\ \text{\footnotesize n-m=gerade Zahl}\\
-    \dfrac{2m}{m^2-n^2},\ \text{{\footnotesize n-m=ungeade Zahl}}\\
+    \dfrac{2m}{m^2-n^2},\ \text{{\footnotesize n-m=ungerade Zahl}}\\
     \end{cases}$
 \end{minipage}
 
@@ -163,10 +163,11 @@ $$c_n=\overline{c_{-n}}=\frac{1}{T}\int\limits_0^T{f(t)\cdot e^{-jn\omega t}dt}$
     (n=0,1,2,3,\ldots, b_0 = 0)$$
 \end{minipage}
 \subsubsection{Fourierreihe für beliebige Periode}
-Gegeben: Periodische Funktion f mit \textbf{Periode L}
+Gegeben: Periodische Funktion f mit \textbf{Periode L}\newline
 \textbf{Reelle Fourierreihe}
+\vspace{-0.3cm}
 \begin{centering}
-    $$ f(t) = \frac{a_0}{2} | + \sum_{k=1}^{\infty}\left[a_k cos\left(\frac{2\pi}{L}kt\right)+b_k sin(\left(\frac{2\pi}{L}kt\right) \right] $$
+    $$ f(t) = \frac{a_0}{2} + \sum_{k=1}^{\infty}\left[a_k cos\left(\frac{2\pi}{L}kt\right)+b_k sin(\left(\frac{2\pi}{L}kt\right) \right] $$
 \end{centering}
 \vspace{-0.5cm}
 \begin{multicols}{3}
@@ -180,6 +181,7 @@ Gegeben: Periodische Funktion f mit \textbf{Periode L}
 \end{multicols}
 \subsubsection{Sätze zur Berechnung der Fourierkoeffizienten}
 \textbf{Symmetrie}
+\vspace{-0.2cm}
 \begin{multicols}{2}
     \begin{minipage}{\linewidth}
         \textbf{Gerade $\quad f(t) = f(-t)$}\newline       
