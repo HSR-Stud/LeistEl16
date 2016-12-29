@@ -62,8 +62,8 @@ Inverswandler, Umkehrung der Polarität\newline
     \includegraphics[width=\linewidth]{images/InverseSwitch}
 \end{minipage}
 
-\subsection{Gleichstrom-Schalter/Steller}
-\subsubsection{Gleichstrom-Schalter}
+\subsection{Gleichstromschalter/Gleichstromsteller}
+\subsubsection{Gleichstromschalter}
 \begin{minipage}{0.5\linewidth}
     \textbf{Nur Einschalten}\newline
     \[ U_1=(L + L_{\sigma})\cdot \frac{\diff i_L}{\diff t}+R\cdot i_L \]
@@ -84,7 +84,7 @@ Inverswandler, Umkehrung der Polarität\newline
     \includegraphics[width=1.2\linewidth]{images/GsSchalterOnOff}
 \end{minipage}
 
-\subsubsection{Gleichstrom-Steller}
+\subsubsection{Gleichstromsteller}
 \begin{minipage}{0.5\linewidth}
 \[ U_{2AV}=\frac{1}{t_{on}+t_{off}}\int_{0}^{t_e}U_1\cdot \diff t = \frac{t_{on}}{t_{on}+t_{off}}U_1 \]
 \end{minipage}
@@ -103,7 +103,7 @@ Inverswandler, Umkehrung der Polarität\newline
 \begin{minipage}{0.7\linewidth}
     \begin{longtable}{   p{.50\textwidth}  p{.6\textwidth} }
          $U_{m2} = \frac{T_E}{T}\cdot U_D = F_p\cdot T_E \cdot U_D$ &
-         $U_{m2}$ = mittelwert Ausgangsspg.\newline
+         $U_{m2}$ = Mittelwert Ausgangsspg.\newline
          $T_e $ = Einschaltzeit \newline
          $T$ = Periodendauer \newline
          $U_D$ = Zwischenkreisspg. \newline
@@ -111,20 +111,20 @@ Inverswandler, Umkehrung der Polarität\newline
          \\  
          
          $\varDelta i_2 = 2 \alpha\frac{U_D}{L}T_E(1-\frac{T_E}{T})$ &
-         $\alpha$= 0.5 \quad 1Q-Betrieb \newline
-         $\alpha$= 1 \quad MehrQ-Betrieb
+         $\alpha$ = 0.5 \quad 1Q-Betrieb \newline
+         $\alpha$ = 1 \quad MehrQ-Betrieb
          \\
          
          $ P = U_D I_{m2}\frac{T_E}{T} $&
-         $i_2$=Ausgangsstrom\newline
-         $i_{m2}$= mittelwert Ausgansstr.\newline
-         $L$= ind. der Last \newline
-         $P$= AusgangsLeisttung
+         $i_2$ =Ausgangsstrom\newline
+         $i_{m2}$ = Mittelwert Ausgansstr.\newline
+         $L$ = ind. der Last \newline
+         $P$ = Ausgangsleistung
          \\
          
          $U_{ac\; 2}=\sqrt{U_2^2-U_{m2}^2}= U_D\sqrt{\frac{T_E}{T}(1-\frac{T_E}{T})} $ &
-         $U_{ac2}$= WechselstromKomp der U\newline
-         max bei Tastgrad 50\% \\        
+         $U_{ac2}$= Wechselstromkomponente von U ist\newline
+         maximal bei Tastgrad 50\% \\        
     \end{longtable}
 \end{minipage}
 \begin{minipage}{0.3\linewidth}
