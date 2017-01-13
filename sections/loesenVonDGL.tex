@@ -53,4 +53,46 @@
 	
 	\item $y_p$ in DGL einsetzen, $C$ und $D$ per Koeffizientenvergleich ermitteln
 \end{enumerate}
+
+\subsection{Störgliedtabelle}
+\begin{tabular}{|p{8cm}|p{10cm}|}
+    \hline 	
+    Störglied $g(x)$ & Ansatz $y_p$ \\
+    \hline
+    $k$ (Konstante) & $A$ \\
+    \hline
+    $x^n$ & \multirow{2}{*}{$A_n*x^n + \dots + A_1*x + A_0$} \\
+    $p_n(x) = b_n*x^n + \dots + b_1*x + b_0$ & \\
+    \hline
+    $k*e^{m*x}$ & $A*e^{m*x}$ \\
+    \hline	
+    $k*cos(b*x)$ & \multirow{3}{*}{$A*cos(b*x) + B*sin(b*x)$} \\
+    $k*sin(b*x)$ & \\
+    $k_1*cos(b*x) + k_2*sin(b*x)$ & \\
+    \hline
+    $k*e^{m*x}*cos(b*x)$ & \multirow{3}{*}{$e^{m*x}*(A*cos(b*x) + B*sin(b*x))$} \\
+    $k*e^{m*x}*sin(b*x)$ & \\
+    $e^{m*x}*(k_1*cos(b*x) + k_2*sin(b*x)$ & \\
+    \hline
+    $k*cosh(b*x)$ & \multirow{3}{*}{$A*cosh(b*x) + B*sinh(b*x)$} \\
+    $k*sinh(b*x)$ & \\
+    $k_1*cosh(b*x) + k_2*sinh(b*x)$ & \\
+    \hline
+    $k*e^{m*x}*cosh(b*x)$ & \multirow{3}{*}{$e^{m*x}*(A*cohs(b*x) + B*sinh(b*x))$} \\
+    $k*e^{m*x}*sinh(b*x)$ & \\
+    $e^{m*x}*(k_1*cosh(b*x) + k_2*sinh(b*x)$ & \\
+    \hline
+    $k*x*e^{mx}$ & $(A*x+B)*e^{m*x}$ \\
+    \hline
+    $p_n(x)*e^{m*x}$ & $(A_n*x^n + \dots + A_1*x + A_0)*e^{mx}$ \\
+    \hline
+    $x*(k_1*cos(b*x) + k_2*sin(b*x))$ & $(A_1*x+B_1)*cos(b*x) + (A_2*x+B_2)*sin(b*x)$ \\
+    \hline
+    $x*e^{mx}*(k_1*cos(b*x) + k_2*sin(b*x))$ & $e^{mx}*((A_1*x+B_1)*cos(b*x) + (A_2*x+B_2)*sin(b*x))$ \\
+    \hline
+    $x*(k_1*cosh(b*x) + k_2*sinh(b*x))$ & $(A_1*x+B_1)*cosh(b*x) + (A_2*x+B_2)*sinh(b*x)$ \\
+    \hline
+    $x*e^{mx}*(k_1*cosh(b*x) + k_2*sinh(b*x))$ & $e^{mx}*((A_1*x+B_1)*cosh(b*x) + (A_2*x+B_2)*sinh(b*x))$ \\
+    \hline
+\end{tabular}
 \clearpage
