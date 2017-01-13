@@ -52,3 +52,107 @@ Als nächstes müssen wir $\alpha$ bestimmen. Sobald die Steigung von $U_R \neq 
 
 \textbf{Diode sperrt} $ \alpha = 91.35_{grad}< \beta < \gamma = 249.5_{grad}  $\newline
 \[  U_R(\beta)  =  U_{2m} \cdot sin(\alpha) \cdot e^{-\frac{\beta - \alpha}{\omega \tau}}\]
+
+\clearpage
+\subsection{M1U RL}
+\begin{minipage}{0.4\linewidth}
+    \includegraphics[width=\linewidth]{images/Rechnungsbsp/B2URC}
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
+    \includegraphics[width=\linewidth]{images/Rechnungsbsp/B2URCKl}
+\end{minipage}
+\begin{minipage}{5cm}
+    $ R = 270 $ \newline
+    $ C = 500 \cdot 10^{-6} $\newline
+    $ U_{2m} = 30 $ \newline
+    $ f = 50 Hz $   
+\end{minipage}
+
+\textbf{Diode leitet:} $ 0 < t < \pi falsch $ $ 0 \leq \beta \leq \pi $\newline
+$U_2(t) = i_R + L\frac{\diff i(t)}{\diff t}$\newline
+\textbf{Homogen Lösung}
+\begin{align*}
+     0 = & i_R + L \frac{\diff i(t)}{\diff t} \\
+     i_{h1} = & C_2 \cdot e^{\frac{-t}{\tau}} = C_2 \cdot e^{\frac{-\beta}{\omega \tau}}
+\end{align*} 
+
+\textbf{partikuläre Lösung}
+\begin{align*}
+    U_{2m}\cdot sin(\omega t) = & R\cdot i_{p1} + L \frac{\diff i_{p1}}{\diff t}\\
+    k \cdot sin(b \cdot x)= & A \cdot sin(b \cdot x) + B \cdot cos(b \cdot x) \qquad \text{Ansatz Störglied}\\
+    i_{p1} = & A \cdot sin(\omega t) + B \cdot cos(\omega t)\\
+    \frac{\diff i_{p1}}{\diff t} = & A \cdot \omega cos(\omega t) - B \cdot \omega \cdot cos(\omega t)\\
+    U_{2m}\cdot sin(\omega t) = & R\cdot A \cdot sin(\omega t) + R\cdot B \cdot cos(\omega t)  + L\cdot A \cdot \omega cos(\omega t) - L\cdot B \cdot \omega \cdot cos(\omega t)\\
+    U_{2m}\cdot sin(\omega t) + 0\cdot cos(\omega t) = & sin(\omega t)(R \cdot A - L \cdot B \cdot \omega) + cos(\omega t)(R\cdot B + L \cdot A \cdot \omega)
+\end{align*}
+\begin{minipage}{5cm}
+    $rref
+    \begin{bmatrix}
+    R       &-L\omega  & U_{2m} \\ 
+    L \omega&R         & 0
+    \end{bmatrix} 
+    \rightarrow$ 
+\end{minipage}
+\begin{minipage}{5cm}
+    \[ A = U_{2m} \frac{R}{R^2 + L^2\omega^2} \]
+    \[ B = -U_{2m} \frac{L\omega}{R^2 + L^2\omega^2} \]
+\end{minipage}
+\begin{align*}
+    i_1 = & i_{p1} + i_{h1}\\
+    i_{p1} = & U_{2m} sin(\omega t) \frac{R}{R^2 + L^2\omega^2} - U_{2m} cos(\omega t) \frac{L\omega}{R^2 + L^2\omega^2}\\
+    i_{h1} = & C_2 \cdot e^{\frac{-t}{\tau}}\\
+    i_{1}(\beta) = & U_{2m} sin(\beta) \frac{R}{R^2 + L^2\omega^2} - U_{2m} cos(\beta) \frac{L\omega}{R^2 + L^2\omega^2} + C_2 \cdot e^{\frac{-\beta}{\omega \tau}}
+\end{align*}
+
+\textbf{Diode sperrt:}$ \pi \leq \beta \leq 2\pi$\newline
+$0 = i_R + L\frac{\diff i(t)}{\diff t}$\newline
+\textbf{Homogen Lösung}
+\begin{align*}
+i_{h2} = & C_3 \cdot e^{\frac{-t}{\tau}} = C_3 \cdot e^{\frac{-\beta}{\omega \tau}}\\
+i_2 = & i_{h2}
+\end{align*}
+\\
+\textbf{Anfangsbedingungen}
+\begin{align*}
+    i_1(\pi) = & i_2(\pi)\\
+    i_1(0)  = & i_2(2\pi)
+\end{align*}
+
+\textbf{Ströme vergleichen}
+\begin{align*}
+    \beta = \pi \qquad & \qquad \beta = \pi\\
+    - U_{2m} \frac{L\omega}{R^2 + L^2\omega^2} + C_2 \cdot e^{\frac{-\pi}{\omega \tau}} = & C_3 \cdot e^{\frac{-\pi}{\omega \tau}}\\
+    \beta = 0 \qquad & \qquad \beta = 2\pi\\
+    U_{2m} \frac{L\omega}{R^2 + L^2\omega^2} + C_2  = & C_3 \cdot e^{\frac{-2\pi}{\omega \tau}}\\  
+\end{align*}
+\begin{minipage}{7cm}
+    $rref
+    \begin{bmatrix}
+    e^{\frac{-\pi}{\omega \tau}}       &-e^{\frac{-\pi}{\omega \tau}}  & U_{2m} \frac{L\omega}{R^2 + L^2\omega^2} \\ 
+    1& -e^{\frac{-2\pi}{\omega \tau}}         & -U_{2m} \frac{L\omega}{R^2 + L^2\omega^2}
+    \end{bmatrix} 
+    \rightarrow$ 
+\end{minipage}
+\begin{minipage}{5cm}
+    \[ C_2 = U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \]
+    \[ C_3 = -U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{2\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \]
+\end{minipage}
+\\
+\textbf{Diode Leitet} $ 0 \leq \beta \leq \pi $\newline
+\[ i_{1}(\beta) =  U_{2m} sin(\beta) \frac{R}{R^2 + L^2\omega^2} - U_{2m} cos(\beta) \frac{L \cdot \omega}{R^2 + L^2\omega^2} + U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \cdot e^{\frac{-\beta}{\omega \tau}} \]
+
+\textbf{Diode Sperrt} $ \pi \leq \beta \leq 2\pi $\newline
+\[ i_2(\beta) = -U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{2\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \cdot e^{\frac{-\beta}{\omega \tau}} \]
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
