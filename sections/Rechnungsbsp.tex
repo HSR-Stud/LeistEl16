@@ -23,7 +23,7 @@
  Um B herauszufinden müssen die Anfangsbedingungen eingesetzt werden.\newline 
  Beim Winkel $\alpha$ ist der Spg-Verlauf von $U_2$ = der StartSpg. 
      \begin{align*}
-     U_R(\alpha) & =U_R(\alpha)\\
+     U_2(\alpha) & =U_R(\alpha)\\
      U_{2m} \cdot sin(\alpha) & = B \cdot e^{-\frac{\alpha}{\omega \tau}}\\
      B & = U_{2m} \cdot sin(\alpha) \cdot e^{\frac{\alpha}{\omega \tau}}\\
      U_R(\beta) & =  U_{2m} \cdot sin(\alpha) \cdot e^{-\frac{\beta - \alpha}{\omega \tau}} \qquad \alpha \leq \beta \leq \gamma       
@@ -146,6 +146,8 @@ i_2(\beta) = & i_{h2}
 \[ i_2(\beta) = -U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{2\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \cdot e^{\frac{-\beta}{\omega \tau}} \]
 \clearpage
 
+%==========================================================================
+
 \subsection{M1C RL}
 $ \alpha $ = Anschnittswinkel \newline
 \begin{minipage}{8cm}
@@ -168,7 +170,7 @@ $ \alpha $ = Anschnittswinkel \newline
  \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_1) R - cos(\alpha_1) L\omega\right) + C_2 \cdot e^{\frac{-\alpha_1}{\omega \tau}} = & C_3 \cdot e^{\frac{-\alpha_2}{\omega \tau}}\\
  \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_3) R - cos(\alpha_3) L\omega\right) + C_2 \cdot e^{\frac{-\alpha_3}{\omega \tau}} = & C_3 \cdot e^{\frac{-\alpha_4}{\omega \tau}} 
 \end{align*}
-
+Variabeln einsetzen.\newline
 \begin{minipage}{\linewidth}
     $
     \begin{bmatrix}
@@ -186,17 +188,17 @@ $ \alpha $ = Anschnittswinkel \newline
         \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_3) R - cos(\alpha_3) L\omega\right)
     \end{bmatrix} 
     $ \newline
-    solve C2 \& C3 \\
+    rref für C2 \& C3 \\
 \end{minipage}
 
 \textbf{Diode Leitet} $ \alpha_3 \leq \beta \leq \alpha_1 $\newline
-\[ i_{1}(\beta) = \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\beta) R - cos(\beta) L\omega\right) + C_2 \cdot e^{\frac{-\beta}{\omega \tau}} \]
+\[ i_{1}(\beta) = \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\beta) \cdot R - cos(\beta) \cdot L\omega\right) + C_2 \cdot e^{\frac{-\beta}{\omega \tau}} \]
 
 \textbf{Diode Sperrt} $ \alpha_2 \leq \beta \leq \alpha_4 $\newline
 \[ i_2(\beta) =  C_3 \cdot e^{\frac{-\beta}{\omega \tau}} \]
 
 \clearpage
-
+%==========================================================================
 
 
 
