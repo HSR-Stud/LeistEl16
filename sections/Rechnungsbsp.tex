@@ -146,9 +146,56 @@ i_2(\beta) = & i_{h2}
 \[ i_2(\beta) = -U_{2m} \frac{L \cdot \omega}{R^2 + L^2\omega^2} \cdot  \frac{e^{\frac{2\pi}{\omega \tau}}}{e^{\frac{\pi}{\omega \tau}} +1} \cdot e^{\frac{-\beta}{\omega \tau}} \]
 \clearpage
 
+\subsection{M1C RL}
+$ \alpha $ = Anschnittswinkel \newline
+\begin{minipage}{8cm}
+    \textbf{Anfangsbedingungen}
+    \begin{align*}
+        i_1(\alpha_1) = & i_2(\alpha_2)\\
+        i_1(\alpha_3)  = & i_2(\alpha_4)
+    \end{align*}
+\end{minipage}
+\begin{minipage}{8cm}
+    Bsp.
+    \begin{align*}
+    i_1(\pi) = & i_2(\pi)\\
+    i_1(\alpha)  = & i_2(\alpha + 2\pi)
+    \end{align*}
+\end{minipage}
 
+\textbf{Ströme vergleichen}
+\begin{align*}
+ \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_1) R - cos(\alpha_1) L\omega\right) + C_2 \cdot e^{\frac{-\alpha_1}{\omega \tau}} = & C_3 \cdot e^{\frac{-\alpha_2}{\omega \tau}}\\
+ \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_3) R - cos(\alpha_3) L\omega\right) + C_2 \cdot e^{\frac{-\alpha_3}{\omega \tau}} = & C_3 \cdot e^{\frac{-\alpha_4}{\omega \tau}} 
+\end{align*}
 
+\begin{minipage}{\linewidth}
+    $
+    \begin{bmatrix}
+        -e^{\frac{-\alpha_1}{\omega \tau}}       &e^{\frac{-\alpha_2}{\omega \tau}} \\
+        -e^{\frac{-\alpha_3}{\omega \tau}}       &e^{\frac{-\alpha_4}{\omega \tau}}
+    \end{bmatrix} 
+    \cdot
+    \begin{bmatrix}
+        C_2\\
+        C_3
+    \end{bmatrix} 
+    =
+    \begin{bmatrix}
+        \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_1) R - cos(\alpha_1) L\omega\right)\\
+        \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\alpha_3) R - cos(\alpha_3) L\omega\right)
+    \end{bmatrix} 
+    $ \newline
+    solve C2 \& C3 \\
+\end{minipage}
 
+\textbf{Diode Leitet} $ \alpha_3 \leq \beta \leq \alpha_1 $\newline
+\[ i_{1}(\beta) = \frac{U_{2m}}{R^2 + L^2\omega^2}\left(sin(\beta) R - cos(\beta) L\omega\right) + C_2 \cdot e^{\frac{-\beta}{\omega \tau}} \]
+
+\textbf{Diode Sperrt} $ \alpha_2 \leq \beta \leq \alpha_4 $\newline
+\[ i_2(\beta) =  C_3 \cdot e^{\frac{-\beta}{\omega \tau}} \]
+
+\clearpage
 
 
 
